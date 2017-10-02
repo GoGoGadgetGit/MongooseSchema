@@ -1,0 +1,30 @@
+<!doctype html>
+
+<html>
+<head>
+
+</head>
+
+<body>
+  <ul>
+    {{ #figures }}
+    <li>
+      {{ name }}
+      <form method="post" action="/delete/{{ _id }}">
+        <button>Delete</button>
+      </form>
+      <form method="post" action="/edit/{{ _id }}">
+        <input type="text" name="change" placeholder="make change">
+        <button>Edit</button>
+      </form>
+    </li>
+    {{ /figures }}
+  </ul>
+
+  <form method="post" action="/add">
+    <input type="text" name="new" placeholder="add new">
+    <button>Submit</button>
+    </form>
+</body>
+
+</html>
